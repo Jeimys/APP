@@ -1,0 +1,164 @@
+<Classification>:
+    MDScreen:
+        name: 'Classification'
+        FitImage:
+            source:"Images/Backgrounds/Menu.png"
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: ('20dp', '10dp', '20dp', '20dp')
+            spacing: 5
+
+            MDRoundFlatIconButton:
+                text: "Volver"
+                icon: "arrow-left"
+                pos_hint: {"center_y":0.9, "right": 0.3} 
+                size_hint_x_: None
+                width: self.parent.width * 0.4 
+                text_color: "black" 
+                line_color: 0,0,0,0
+                bold: True
+                theme_icon_color: "Custom"
+                icon_color: "black"
+                on_press: root.go_back() 
+
+            Image:
+                source: "Images/Icons/Hypercorn.png"  
+                size_hint_y: None
+                height: "200"
+              
+            MDLabel:
+                text: "Análisis por segmentos" 
+                halign: "center"
+                pos_hint: {"center_x": .5} #alineacion texto"
+                bold: True
+                font_style: "H4"
+                #font_size: 25       
+                theme_text_color: "Custom"     
+                text_color: "black"
+            
+                
+            MDBoxLayout:
+                id: segment_box
+                orientation: "vertical"
+                size_hint: None, None  # Deshabilita el ajuste automático del tamaño
+                size: "290dp", "320dp"  # Establece el tamaño del MDBoxLayout
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: 1, 1, 1, 1  # Color blanco
+                radius: [15, 15, 15, 15] 
+                padding: ('10dp', '10dp', '10dp', '10dp')
+
+                MDLabel:
+                    text: "Aquí se mostrará tu imagen K-MEANS"
+                    id: segment_label
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: (0, 0, 0, 1)  # Color negro
+                    font_style: "Subtitle2"
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint: None, None
+                size: "320dp", "30dp"
+                md_bg_color: 0, 0, 0, 0
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#d73027" 
+                    font_size: '50sp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#f46d43" 
+                    font_size: '50sp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#fdae61" 
+                    font_size: '50sp'
+                MDLabel:
+                    text: "Plantas enfermas"   
+                    halign: "left"
+                    bold: True
+                    font_style: "Subtitle1"
+                    theme_text_color: "Custom"
+                    text_color: (0, 0, 0, 1)
+                    
+            MDBoxLayout:
+                orientation: "horizontal"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint: None, None
+                size: "320dp", "30dp"
+                md_bg_color: 0, 0, 0, 0
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#fee08b" 
+                    font_size: '50sp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#ffffbf" 
+                    font_size: '50sp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#d9ef8b" 
+                    font_size: '50sp'
+                MDLabel:
+                    text: "Plantas medianamente sanas"   
+                    halign: "left"
+                    bold: True
+                    font_style: "Subtitle1"
+                    theme_text_color: "Custom"
+                    text_color: (0, 0, 0, 1)
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint: None, None
+                size: "320dp", "30dp"
+                md_bg_color: 0, 0, 0, 0
+                spacing: '0dp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#a6d96a" 
+                    font_size: '50sp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#66bd63" 
+                    font_size: '50sp'
+                MDIcon:
+                    icon: "rectangle"
+                    pos_hint: {"center_x": .5, "center_y": .6}
+                    theme_text_color: "Custom"
+                    text_color: "#1a9850" 
+                    font_size: '50sp'
+                MDLabel:
+                    text: "Plantas sanas"   
+                    halign: "left"
+                    bold: True
+                    font_style: "Subtitle1"
+                    theme_text_color: "Custom"
+                    text_color: (0, 0, 0, 1)
+
+            MDRaisedButton:
+                text: "Siguiente"
+                font_size: 35
+                size: "200dp", "48dp"
+                pos_hint: {"center_x": 0.5}  # Centra horizontalmente
+                md_bg_color: "green"  # Verde
+                text_color: "white"    # Blanco
+                bold: True
+                on_press: app.change_screen('Result')

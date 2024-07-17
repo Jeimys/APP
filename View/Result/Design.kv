@@ -1,0 +1,70 @@
+<Result>:
+    MDScreen:
+        name: 'Result'
+
+        FitImage:
+            source:"Images/Backgrounds/result.png"
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: ('60dp', '10dp', '60dp', '30dp')
+            spacing: 5
+        
+            MDRoundFlatIconButton:
+                text: "Volver"
+                icon: "arrow-left"
+                pos_hint: {"center_y": 0.9, "right": 0.3} 
+                size_hint_x_: None
+                width: self.parent.width * 0.4 
+                text_color: "black" 
+                line_color: 0,0,0,0
+                bold: True
+                theme_icon_color: "Custom"
+                icon_color: "black"
+                on_press: root.go_back() 
+
+            Image:
+                source: "Images/Icons/Hypercorn.png"  
+                size_hint_y: None
+                height: "200"
+
+            MDLabel:
+                text: "RECOMENDACIONES"
+                halign: "center"
+                bold: True
+                font_style: "H5"
+                theme_text_color: "Custom"
+                text_color: "green"
+
+            MDLabel:
+                text: "1. Si su cultivo presenta zonas con plantas enfermas se recomienda consultar con su agrónomo para averiguar la causa de la enfermedad, y de acuerdo a eso aplicar fertilizantes o tratamientos biológicos. También pueden eliminar las plantas infectadas para prevenir que se infecte el cultivo sano."
+                halign: "left"
+                theme_text_color: "Custom"
+                text_color: "black"  # Color negro
+                font_style: "Subtitle1"
+
+
+            MDLabel:
+                text: "2. Si su cultivo presenta zonas con plantas medianamente sanas se recomienda monitorear con mayor frecuencia para detectar signos de estrés o enfermedad. Se debe asegurar el riego para que las plantas reciban suficiente agua."
+                halign: "left"
+                theme_text_color: "Custom"
+                text_color: "black"  # Color negro
+                font_style: "Subtitle1"
+
+            MDLabel:
+                text: "3. Si su cultivo presenta zonas con plantas sanas se recomienda mantener el tratamiento de estos cultivos. Además, se debe seguir monitoreando con frecuencia para detectar cualquier signo temprano de enfermedad."
+                halign: "left"
+                theme_text_color: "Custom"
+                text_color: "black"  # Color negro
+                font_style: "Subtitle1"
+
+
+            MDRaisedButton:
+                text: "Cargar otra imagen"
+                font_size: 35
+                size: "200dp", "48dp"
+                pos_hint: {"center_x": 0.5}  # Centra horizontalmente
+                md_bg_color: "green"  # Verde
+                text_color: "white"    # Blanco
+                bold: True
+                on_press: app.cargar_otra_imagen()

@@ -1,0 +1,70 @@
+<Wellcome>:
+    MDScreen:
+        name: 'Wellcome'
+        FitImage:
+            source: "Images/Backgrounds/Wellcome.png" # Cambiar imagen
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: ('20dp', '20dp', '20dp', '20dp')
+            spacing: 25
+
+            Image:
+                source: "Images/Icons/Hypercorn.png"
+                size_hint_y: None
+                height: "200"
+
+            MDLabel:
+                id: welcome
+                text: "¡BIENVENIDO!"
+                halign: "center"
+                bold: True
+                font_style: "H4"
+                theme_text_color: "Custom"
+                text_color: "green"
+
+            MDTextField:
+                id: user
+                hint_text: "Usuario"
+                icon_right: "account"
+                error_color:"black"
+                size_hint_x: None
+                width: 400
+                font_size: 18
+                pos_hint: {'center_x': 0.5}
+                multiline: False
+                required: True
+
+
+            MDTextField:
+                id: password
+                hint_text: "Contraseña"
+                error_color:"black"
+                icon_right: "eye-off"
+                size_hint_x: None
+                width: 400
+                font_size: 18
+                pos_hint: {'center_x': 0.5}
+                multiline: False
+                required: True
+                password: True
+
+            
+            MDRaisedButton:
+                text: "Iniciar sesión"
+                font_size: 40
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: "green"  # Verde
+                text_color: "white"    # Blanco
+                bold: True
+                on_press: app.logger()
+                #on_press: app.change_screen('Menu')
+
+            MDLabel:
+                text: "HYPERFIELD"
+                halign: "center"
+                bold: True
+                font_style: "H4"
+                theme_text_color: "Custom"
+                text_color: "green"
+
